@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import jwt, { JwtPayload } from "jsonwebtoken";
 
 interface AuthenticatedRequest extends Request {
-  userId?: JwtPayload;
+  userId?: string;
 }
 const dotenv = require("dotenv");
 
@@ -23,7 +23,7 @@ export const auth = (req: AuthenticatedRequest,res: Response, next: NextFunction
       return res.status(403).json({ message: "Invalid token" }).send();
     }
 
-    req.userId = user as JwtPayload;
+    req.userId = user as string;
     next();
   });
 };

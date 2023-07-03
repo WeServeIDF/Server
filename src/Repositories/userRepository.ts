@@ -6,6 +6,6 @@ export const login = async (user : LoginUserDTO) => await DBserver.post('/users/
 
 export const register = async (user : RegisterUserDTO) => await DBserver.post('/users/register', user);
 
-export const getInfo = async (userId : number) => await DBserver.get(`/users/${userId}`);
+export const getInfo = async (userId : string) => await DBserver.get(`/users/${userId}`);
 
 export const updateInfo = async (user : RegisterUserDTO) => await DBserver.put('/users/uptade', user);

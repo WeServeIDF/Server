@@ -1,13 +1,14 @@
 import express, { Router } from 'express';
 const router : Router = express.Router();
 import { loginUser, registerUser, getUser, updateUser } from "../Services/userService";
+import { auth } from '../middlewires/auth';
 
 router.post('/login', loginUser);
 
 router.post('/register', registerUser);
 
-router.get('/:id', getUser);
+router.get('/', auth, getUser);
 
-router.put('/:id', updateUser)
+router.put('/', auth, updateUser)
 
 module.exports = router;
