@@ -28,4 +28,5 @@ const User = db.define('User', {
 
 User.hasOne(Station, { foreignKey: 'ownerId', as: 'primarystation', scope: { isPrimary: true }});
 
+
 module.exports = User;

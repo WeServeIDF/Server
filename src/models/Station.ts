@@ -42,4 +42,5 @@ const Station = db.define('Station', {
 User.belongsTo(Station, { foreignKey: 'ownerId', as: 'owner' });
 Station.hasMany(stationUseRequest, { foreignKey: 'stationId', as: 'stationUseRequests' });
 
+
 module.exports = Station;

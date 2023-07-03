@@ -2,7 +2,7 @@ import express, { Express, Request, Response} from 'express';
 const app : Express= express();
 const port : number = 3000;
 const userController = require('./Controllers/userController');
-import db from './db';
+import db from './DB';
 const User = require('./models/User');
 const Station = require('./models/Station');
 const stationUseRequest = require('./models/stationUseRequest');
@@ -15,9 +15,9 @@ app.get('/', (req : Request, res : Response) => {
 app.use('/user', userController);
 
 app.listen(port, async () => {
-  User.sync({force: true});
-  Station.sync({force: true});
-  stationUseRequest.sync({force: true});
+  // User.sync({force: true});
+  // Station.sync({force: true});
+  // stationUseRequest.sync({force: true});
   db.sync({force: true}).then((result) => {
     console.info("db synced")
     db.getQueryInterface().showAllTables().then((tableObj) => {
