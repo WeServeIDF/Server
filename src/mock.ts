@@ -1,6 +1,6 @@
 const User = require('./models/User');
-const Stand = require('./models/Stand');
-const StandUseRequest = require('./models/StandUseRequest');
+const Station = require('./models/Station');
+const stationUseRequest = require('./models/stationUseRequest');
 
 export async function createMockData() {
   try {
@@ -25,14 +25,14 @@ export async function createMockData() {
     const createdUsers = await User.bulkCreate(mockUsers);
     console.log('Mock users created:', createdUsers.length);
 
-    // Create mock stands
-    const mockStands = [
+    // Create mock stations
+    const mockstations = [
       {
         base: 'Base A',
         building: 'Building X',
         network: 'Network 1',
         office: 'Office 101',
-        description: 'Stand A description',
+        description: 'station A description',
         lat: 37.123456,
         long: -122.987654,
         ownerId: '12345678',
@@ -43,18 +43,18 @@ export async function createMockData() {
         building: 'Building Y',
         network: 'Network 2',
         office: 'Office 202',
-        description: 'Stand B description',
+        description: 'station B description',
         lat: 37.234567,
         long: -122.876543,
         ownerId: '123456789',
         isPrimary: false,
       },
-      // Add more mock stand objects as needed
+      // Add more mock station objects as needed
     ];
-    const createdStands = await Stand.bulkCreate(mockStands);
-    console.log('Mock stands created:', createdStands.length);
+    const createdstations = await Station.bulkCreate(mockstations);
+    console.log('Mock stations created:', createdstations.length);
 
-    // Create mock stand use requests
+    // Create mock station use requests
     const mockRequests = [
       {
         clientId: '12345678',
@@ -70,8 +70,8 @@ export async function createMockData() {
       },
       // Add more mock request objects as needed
     ];
-    const createdRequests = await StandUseRequest.bulkCreate(mockRequests);
-    console.log('Mock stand use requests created:', createdRequests.length);
+    const createdRequests = await stationUseRequest.bulkCreate(mockRequests);
+    console.log('Mock station use requests created:', createdRequests.length);
   } catch (error) {
     console.error('Failed to create mock data:', error);
   }

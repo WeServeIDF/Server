@@ -8,7 +8,7 @@ export type workPlaceTDO = {
     base: string;
     building: string;
     office: string;
-    networks: "black" | "army" | "ts";
+    networks: "none" | "blms" | "army" | "ts";
     description: string;
     location: Location;
 }

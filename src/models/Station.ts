@@ -1,9 +1,9 @@
 const { DataTypes } = require('sequelize');
 const db = require('../db');
 const User = require('./User');
-const StandUseRequest = require('./Request');
+const stationUseRequest = require('./Request');
 
-const Stand = db.define('Stand', {
+const Station = db.define('Station', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -39,7 +39,7 @@ const Stand = db.define('Stand', {
   },
 });
 
-User.belongsTo(Stand, { foreignKey: 'ownerId', as: 'owner' });
-Stand.hasMany(StandUseRequest, { foreignKey: 'standId', as: 'standUseRequests' });
+User.belongsTo(Station, { foreignKey: 'ownerId', as: 'owner' });
+Station.hasMany(stationUseRequest, { foreignKey: 'stationId', as: 'stationUseRequests' });
 
-module.exports = Stand;
+module.exports = Station;

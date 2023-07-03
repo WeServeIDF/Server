@@ -6,7 +6,7 @@ export type RegisterUserDTO = {
     password: string;
     phone: string;
     unit: string;
-    workPlace: workPlaceTDO;
+    workPlace?: workPlaceTDO;
 };
 
 export type LoginUserDTO = {

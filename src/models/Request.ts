@@ -6,7 +6,7 @@ const db : Sequelize = require('../db');
 const User = require('./User');
 
 
-const StandUseRequest = db.define('StandUseRequest', {
+const stationUseRequest = db.define('stationUseRequest', {
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
@@ -22,8 +22,8 @@ const StandUseRequest = db.define('StandUseRequest', {
   },
 });
 
-User.hasMany(StandUseRequest, { foreignKey: 'clientId', as: 'client' });
-User.hasMany(StandUseRequest, { foreignKey: 'providerId', as: 'provider' });
-Stand.hasMany(StandUseRequest, { foreignKey: 'standId', as: 'stand' });
+User.hasMany(stationUseRequest, { foreignKey: 'clientId', as: 'client' });
+User.hasMany(stationUseRequest, { foreignKey: 'providerId', as: 'provider' });
+Station.hasMany(stationUseRequest, { foreignKey: 'stationId', as: 'station' });
 
-module.exports = StandUseRequest;
+module.exports = stationUseRequest;
