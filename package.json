@@ -18,6 +18,8 @@
     "@types/jsonwebtoken": "^9.0.0",
     "concurrently": "^8.2.0",
     "nodemon": "^2.0.22",
+    "oracledb": "^6.0.2",
+    "sequelize": "^6.32.1",
     "tslint": "^6.1.3",
     "typescript": "^5.1.6"
   },
