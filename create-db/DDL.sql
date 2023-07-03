@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS Users;
 CREATE TABLE Users (
   id VARCHAR(9) PRIMARY KEY,
   name VARCHAR(50) NOT NULL,
@@ -6,6 +7,7 @@ CREATE TABLE Users (
   unit VARCHAR(30) NOT NULL
 );
 
+DROP TABLE IF EXISTS Stations;
 CREATE TABLE Stations (
   id INT PRIMARY KEY,
   base VARCHAR(50) NOT NULL,
@@ -28,6 +30,7 @@ CREATE TABLE Stations (
   )
 );
 
+DROP TABLE IF EXISTS StationUseRequests;
 CREATE TABLE StationUseRequests (
   id INT PRIMARY KEY,
   date DATE NOT NULL,
