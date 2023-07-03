@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const sequelize = new Sequelize({
+const db : Sequelize = new Sequelize({
     dialect: 'oracle',
     username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
@@ -17,4 +17,4 @@ const sequelize = new Sequelize({
 //     .catch((err) =>
 //     console.error("db connection failed " + err.message));
 
-export default sequelize;
+export default db;
