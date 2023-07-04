@@ -1,6 +1,6 @@
 import express, { Express, Request, Response} from 'express';
 const app : Express= express();
-const port : number = 3000;
+const port : number = 4000;
 var cors = require('cors');
 const userController = require('./Controllers/userController');
 const stationController = require('./Controllers/stationController');
