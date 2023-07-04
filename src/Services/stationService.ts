@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { StationDTO } from '../types/stationDTO';
 
 export const getStations = async (req : Request, res : Response) => {
-    const hardcodedStation1: StationDTO = {
+    const hardcodedStation1: StationDTO = { //LAT LON 31.969461, 34.838343
         timeRange: '12:00-19:00',
         baseName: 'לוטם',
         buildingName: 'ויזידיה',
@@ -11,7 +11,7 @@ export const getStations = async (req : Request, res : Response) => {
         contactName: "עמרי ג'נאח",
         contactPhone: '0503300100'
     }
-    const hardcodedStation2: StationDTO = {
+    const hardcodedStation2: StationDTO = { // LAT LON 32.085098, 34.821060
         timeRange: '10:00-16:00',
         baseName: 'שלישות רמת גן',
         buildingName: 'סיגלית',
@@ -20,7 +20,7 @@ export const getStations = async (req : Request, res : Response) => {
         contactName: "מישהו עם שם",
         contactPhone: '0545381648'
     }
-    const hardcodedStation3: StationDTO = {
+    const hardcodedStation3: StationDTO = { //LAT LON 31.956294, 34.842175
         timeRange: '16:00-23:59',
         baseName: '108 צריפין',
         buildingName: 'השלום',
